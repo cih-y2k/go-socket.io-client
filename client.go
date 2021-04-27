@@ -258,3 +258,9 @@ func (client *Client) readLoop() error {
 		}
 	}
 }
+
+func (client *Client) Close() {
+	client.eventsLock.Lock()
+	client.conn.Close()
+	client.eventsLock.Unlock()
+}

@@ -2,16 +2,17 @@ package main
 
 import (
 	"bufio"
-	"github.com/zhouhui8915/go-socket.io-client"
 	"log"
 	"os"
+
+	socketio_client "github.com/cih-y2k/go-socket.io-client"
 )
 
 func main() {
 
 	opts := &socketio_client.Options{
 		//Transport:"polling",
-		Transport:"websocket",
+		Transport: "websocket",
 		Query:     make(map[string]string),
 	}
 	opts.Query["user"] = "user"
